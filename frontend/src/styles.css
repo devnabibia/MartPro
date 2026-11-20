@@ -1,0 +1,40 @@
+:root{--bg:#e9edf0;--panel:#fff;--ink:#14212b;--mute:#5d6b76;--line:#cfd7dd;--accent:#0f6b66;--warn:#b3361f;--sun:#f2a900;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0f171d;--panel:#18232b;--ink:#e8eef2;--mute:#93a3ae;--line:#2c3b46;--accent:#4cc2b8;--warn:#ff8a73;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 "Avenir Next","Segoe UI",system-ui,sans-serif}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.shell{max-width:1200px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+h1{margin:0;font-size:1.5rem;letter-spacing:-.02em}h2{margin:0 0 12px;font-size:1.1rem}
+nav{display:flex;gap:4px}button,input{font:inherit;color:inherit}
+button{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer}
+button:hover:not(:disabled){border-color:var(--accent)}button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:1px}
+nav .on,.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+input{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%}
+.error{background:var(--warn);color:#fff;padding:10px 14px;border-radius:6px}
+.register{display:grid;grid-template-columns:1fr 340px;gap:16px;align-items:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.tile{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px;min-height:96px;background:var(--panel)}
+.tile span{color:var(--accent);font-weight:600}.warn{color:var(--warn)}small{color:var(--mute)}
+.cart,.inventory form,table{background:var(--panel);border:1px solid var(--line);border-radius:8px}
+.cart,.inventory form{padding:16px;position:sticky;top:16px}
+.line{display:grid;grid-template-columns:1fr auto 80px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:8px}.qty button{padding:2px 9px}
+.total{display:flex;justify-content:space-between;font-size:1.3rem;font-weight:700;margin:14px 0}
+.charge{width:100%;padding:14px;font-weight:700;background:var(--sun);border-color:var(--sun);color:#14212b}
+.empty{color:var(--mute);padding:12px 0}
+.inventory{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+label{display:block;margin-bottom:10px;font-size:.9rem;color:var(--mute)}label input{margin-top:4px;color:var(--ink)}
+.row{display:flex;gap:6px}
+table{width:100%;border-collapse:collapse;overflow:hidden}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}
+th.num{text-align:right}td button{padding:2px 8px;margin:0 6px}td.row button{margin:0}
+tr.low td:first-child{border-left:4px solid var(--warn)}tr.low td.num{color:var(--warn);font-weight:700}
+@media(max-width:800px){.register,.inventory{grid-template-columns:1fr}.cart,.inventory form{position:static}}
+.rcpt{grid-template-columns:1fr auto}.detail{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;max-width:420px}
+tr.void td{color:var(--mute);text-decoration:line-through}.lock{max-width:320px;margin:20vh auto;display:grid;gap:12px}
+@media print{body *{visibility:hidden}.receipt,.receipt *{visibility:visible}.receipt{position:absolute;left:0;top:0;width:80mm}.noprint{display:none}}
+.sumrow{display:flex;justify-content:space-between;color:var(--mute);padding:2px 0}
+.seg{display:flex;gap:4px;margin:10px 0}.seg button{flex:1;padding:8px 4px}.seg .on{background:var(--accent);border-color:var(--accent);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;color:var(--mute)}.stat b{display:block;font-size:1.3rem;color:var(--ink)}
+.filters{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.filters label{margin:0}.cap{text-transform:capitalize}.lock .bad{color:var(--warn);margin:0}
